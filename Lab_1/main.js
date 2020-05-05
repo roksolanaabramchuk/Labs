@@ -6,6 +6,7 @@ let Zavd_2 = require('./Zavd_2.js')
 let Zavd_3 = require('./Zavd_3.js')
 let Zavd_4 = require('./Zavd_4.js')
 let Zavd_5 = require('./Zavd_5.js')
+let Zavd_6 = require('./Zavd_6.js')
 
 // Zavd 1
 console.log('Zavd 1: Реалізувати розбиття стрічки на слова у масив')
@@ -39,3 +40,8 @@ console.log('Zavd 5: Написати функцію, яка поверне кі
 var year = 2020
 var month = 6
 console.log(' Кількість днів у ', month, 'місяці', year, 'року: ', Zavd_5.gettingDayCount(year, month))
+
+// Zavd 6
+console.log('Zavd 6: Написати реалізацію сортування масиву об’єктів User за значенням поля name')
+var users = [{ name: 'Roksolana' }, { name: 'Ann' }, { name: 'Olena' }, { name: 'Bogdan' }, { name: 'Ivan' }]
+console.log(Zavd_6.sortUsers(users))
