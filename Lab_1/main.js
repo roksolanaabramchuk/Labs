@@ -33,3 +33,9 @@ console.log('Zavd 4: Написати функцію, яка перемішає 
 var arr = [2, 11, 37, 42, 4, 32, 19, 121]
 console.log('Масив до перемішування: ', arr)
 console.log('Масив після перемішування: ', Zavd_4.arrayShuffling(arr))
+
+// Zavd 5
+console.log('Zavd 5: Написати функцію, яка поверне кількість днів для заданого місяця та року')
+var year = 2020
+var month = 6
+console.log(' Кількість днів у ', month, 'місяці', year, 'року: ', Zavd_5.gettingDayCount(year, month))
