@@ -7,6 +7,7 @@ let Zavd_3 = require('./Zavd_3.js')
 let Zavd_4 = require('./Zavd_4.js')
 let Zavd_5 = require('./Zavd_5.js')
 let Zavd_6 = require('./Zavd_6.js')
+let PortClass = require('./Port.js')
 
 // Zavd 1
 console.log('Zavd 1: Реалізувати розбиття стрічки на слова у масив')
@@ -45,3 +46,23 @@ console.log(' Кількість днів у ', month, 'місяці', year, 'р
 console.log('Zavd 6: Написати реалізацію сортування масиву об’єктів User за значенням поля name')
 var users = [{ name: 'Roksolana' }, { name: 'Ann' }, { name: 'Olena' }, { name: 'Bogdan' }, { name: 'Ivan' }]
 console.log(Zavd_6.sortUsers(users))
+
+// Zavd 7
+console.log('Zavd 7:')
+var port1 = new PortClass.Port(1, 'SAND', 1)
+var port2 = new PortClass.Port(1, 'SEA', 1)
+var port3 = new PortClass.Port(55, 'DFF', 4)
+
+// Додавання нового порту в колекцію
+port1.AddPort()
+port2.AddPort()
+port3.AddPort()
+console.log(PortClass.PortCollection)
+    // Редагування порту в колекції
+port1.EditingPort(1, 'SAND', 3)
+console.log(PortClass.PortCollection)
+    // Видалення порту з колекції
+    //port1.DeletePort()
+    //console.log(PortClass.PortCollection)
+    //
+console.log(PortClass.Port.SearchPort(55))
