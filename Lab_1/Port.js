@@ -27,15 +27,15 @@ class Port {
 
     // Пошук одного порту в колекції
     static SearchPort(portNumber) {
-        let absent = 0
+        let count = 0
         for (let i in PortCollection) {
             if (PortCollection[i].portNumber === portNumber) {
                 return PortCollection[i]
-                absent++
+                count++
             }
         }
-        if (absent === 0) {
-            return ('Такий клієнт відсутній')
+        if (count === 0) {
+            return ('Такий порт відсутній')
         }
     }
 
