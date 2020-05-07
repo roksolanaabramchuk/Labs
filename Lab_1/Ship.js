@@ -27,6 +27,7 @@ class Ship {
 
     // Пошук одного корабля в колекції
     static SearchShip(shipNumber) {
+
         let count = 0
         for (let i in ShipCollection) {
             if (ShipCollection[i].shipNumber === shipNumber) {
@@ -38,5 +39,6 @@ class Ship {
             return ('Такий корабель відсутній')
         }
     }
+
 }
 module.exports = { Ship, ShipCollection }

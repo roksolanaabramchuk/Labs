@@ -9,7 +9,7 @@ let Zavd_5 = require('./Zavd_5.js')
 let Zavd_6 = require('./Zavd_6.js')
 let PortClass = require('./Port.js')
 let ShipClass = require('./Ship.js')
-
+let PierClass = require('./Pier.js')
 
 // Zavd 1
 console.log('Zavd 1: Реалізувати розбиття стрічки на слова у масив')
@@ -51,12 +51,13 @@ console.log(Zavd_6.sortUsers(users))
 
 // Zavd 7
 console.log('Zavd 7:')
-var port1 = new PortClass.Port(1, 'SAND', 1)
-var port2 = new PortClass.Port(1, 'SEA', 1)
+var port1 = new PortClass.Port(3, 'SAND', 1)
+var port2 = new PortClass.Port(1, 'SEA', )
 var port3 = new PortClass.Port(55, 'DFF', 4)
 var ship1 = new ShipClass.Ship(3, 'Ship!', 1)
 var ship2 = new ShipClass.Ship(66, 'DLF', 4)
 var ship3 = new ShipClass.Ship(13, 'Team', 1)
+var pier1 = new PierClass.Pier(2, 3, new Date(2020, 2, 30), new Date(2020, 4, 3))
 
 // Додавання нового порту в колекцію
 port1.AddPort()
@@ -66,7 +67,7 @@ new PortClass.Port(4, 'HKL', 4).AddPort()
 console.log(PortClass.PortCollection)
 
 // Редагування порту в колекції
-port1.EditingPort(1, 'SAND', 3)
+port1.EditingPort(55, 'SAND', 3)
 console.log(PortClass.PortCollection)
 
 // Видалення порту з колекції
@@ -74,7 +75,8 @@ console.log(PortClass.PortCollection)
 //console.log(PortClass.PortCollection)
 
 // Пошук одного порту в колекції
-console.log(PortClass.Port.SearchPort(4))
+
+console.log('Khjghjkgk', PortClass.Port.SearchPort(4))
 
 // Додавання корабля в колекцію
 ship1.AddShip()
@@ -89,5 +91,11 @@ console.log(ShipClass.ShipCollection)
 // Видалення корабля з колекції
 //ship2.DeleteShip()
 
-//Пошук одного корабля в колекції
+// Пошук одного корабля в колекції
 console.log(ShipClass.Ship.SearchShip(1))
+
+// // Додавання пристані до порту
+// console.log(PierClass.Pier.AddPierToPort(4))
+console.log(PortClass.Port.SearchPort(1))
+pier1.AddPierToPort(1)
+console.log(PortClass.Port.SearchPort(1))
