@@ -51,13 +51,13 @@ console.log(Zavd_6.sortUsers(users))
 
 // Zavd 7
 console.log('Zavd 7:')
-var port1 = new PortClass.Port(3, 'SAND', 1)
-var port2 = new PortClass.Port(1, 'SEA', )
+var port1 = new PortClass.Port(4, 'SAND', 1)
+var port2 = new PortClass.Port(4, 'SEA', )
 var port3 = new PortClass.Port(55, 'DFF', 4)
 var ship1 = new ShipClass.Ship(3, 'Ship!', 1)
-var ship2 = new ShipClass.Ship(66, 'DLF', 4)
-var ship3 = new ShipClass.Ship(13, 'Team', 1)
-var pier1 = new PierClass.Pier(2, 3, new Date(2020, 2, 30), new Date(2020, 4, 3))
+var ship2 = new ShipClass.Ship(5, 'DLF', 2)
+var ship3 = new ShipClass.Ship(1, 'Team', 2)
+var pier1 = new PierClass.Pier(2, 1, new Date(2020, 11, 2, 0, 0, 0, 0), )
 
 // Додавання нового порту в колекцію
 port1.AddPort()
@@ -67,7 +67,7 @@ new PortClass.Port(4, 'HKL', 4).AddPort()
 console.log(PortClass.PortCollection)
 
 // Редагування порту в колекції
-port1.EditingPort(55, 'SAND', 3)
+port1.EditingPort(4, 'SAND', 3)
 console.log(PortClass.PortCollection)
 
 // Видалення порту з колекції
@@ -85,7 +85,7 @@ ship3.AddShip()
 console.log(ShipClass.ShipCollection)
 
 // Редагування корабля в колекції
-ship1.EditingShip(1, 'Ship!', 2)
+ship1.EditingShip(33, 'Ship!', 1)
 console.log(ShipClass.ShipCollection)
 
 // Видалення корабля з колекції
@@ -99,3 +99,7 @@ console.log(ShipClass.Ship.SearchShip(1))
 console.log(PortClass.Port.SearchPort(1))
 pier1.AddPierToPort(1)
 console.log(PortClass.Port.SearchPort(1))
+PierClass.Pier.DeletePierFromPort(1)
+console.log(PortClass.Port.SearchPort(1))
+pier1.ArrivalAndDepartureShip(1)
+pier1.SearchAllShipsPies()

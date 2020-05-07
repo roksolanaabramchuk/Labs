@@ -1,4 +1,6 @@
 let PortClass = require('./Port.js')
+let ShipClass = require('./Ship.js')
+var b = []
 class Pier {
     constructor(pierNumber, shipNumber, arrivalTime, departureTime) {
         this.pierNumber = pierNumber
@@ -7,7 +9,7 @@ class Pier {
         this.departureTime = departureTime
     }
 
-    // Додавання пристані до порту
+    //Додавання пристані до порту
     AddPierToPort(portNumber) {
         let count = 0
         for (let i in PortClass.PortCollection) {
@@ -25,5 +27,43 @@ class Pier {
         }
 
     }
+
+    //Видалення пристані із порту
+    static DeletePierFromPort(portNumber) {
+        b = PortClass.Port.SearchPort(portNumber)
+        if (b.pierNumber === undefined) {
+            console.log("Порт не має пристані")
+        } else {
+            b.pierNumber = undefined
+        }
+
+    }
+
+    // Прибуття/Відбуття корабля від пристані
+    ArrivalAndDepartureShip(shipNumber) {
+        b = ShipClass.Ship.SearchShip(shipNumber)
+        if (this.departureTime !== undefined && this.shipNumber === b.shipNumber) {
+            console.log("Корабель номер", shipNumber, "прибув до пристані номер", this.pierNumber, this.arrivalTime, "і відбув", this.departureTime)
+        } else if (this.arrivalTime !== undefined && this.shipNumber === b.shipNumber) {
+            console.log("Корабель номер", shipNumber, "прибув до пристані номер", this.pierNumber, this.arrivalTime, "але ще не відбув")
+        } else if (this.shipNumber !== b.shipNumber) {
+            console.log("Корабель номер", shipNumber, "не прибував до пристані номер", this.pierNumber)
+        }
+    }
+
+    // Пошук усіх кораблів на пристані
+    SearchAllShipsPies() {
+        var count = 0
+        for (var i in ShipClass.ShipCollection) {
+            if (ShipClass.ShipCollection[i].pierNumber === this.pierNumber) {
+                console.log(ShipClass.ShipCollection[i])
+                count++
+            }
+        }
+        if (count === 0) {
+            console.log('Кораблів на пристані номер', this.pierNumber, 'немає')
+        }
+    }
+
 }
 module.exports = { Pier }
