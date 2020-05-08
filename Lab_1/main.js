@@ -51,8 +51,8 @@ console.log(Zavd_6.sortUsers(users))
 
 // Zavd 7
 console.log('Zavd 7:')
-var port1 = new PortClass.Port(4, 'SAND', 1)
-var port2 = new PortClass.Port(4, 'SEA', )
+var port1 = new PortClass.Port(44, 'SAND', 1)
+var port2 = new PortClass.Port(34, 'SEA', )
 var port3 = new PortClass.Port(55, 'DFF', 4)
 var ship1 = new ShipClass.Ship(3, 'Ship!', 1)
 var ship2 = new ShipClass.Ship(5, 'DLF', 2)
@@ -60,6 +60,7 @@ var ship3 = new ShipClass.Ship(1, 'Team', 2)
 var pier1 = new PierClass.Pier(2, 1, new Date(2020, 11, 2, 0, 0, 0, 0), )
 
 // Додавання нового порту в колекцію
+console.log('a) Додавання нового порту в колекцію: ')
 port1.AddPort()
 port2.AddPort()
 port3.AddPort()
@@ -67,39 +68,53 @@ new PortClass.Port(4, 'HKL', 4).AddPort()
 console.log(PortClass.PortCollection)
 
 // Редагування порту в колекції
-port1.EditingPort(4, 'SAND', 3)
+console.log('b) Редагування порту в колекції: ')
+port1.EditingPort(44, 'SAND', 3)
 console.log(PortClass.PortCollection)
 
 // Видалення порту з колекції
-//port1.DeletePort()
-//console.log(PortClass.PortCollection)
+console.log('c) Видалення порту з колекції: ')
+port1.DeletePort()
+console.log(PortClass.PortCollection)
 
 // Пошук одного порту в колекції
-
-console.log('Khjghjkgk', PortClass.Port.SearchPort(4))
+console.log('d) Пошук одного порту в колекції: ')
+console.log(PortClass.Port.SearchPort(4))
 
 // Додавання корабля в колекцію
+console.log('e) Додавання корабля в колекцію: ')
 ship1.AddShip()
 ship2.AddShip()
 ship3.AddShip()
 console.log(ShipClass.ShipCollection)
 
 // Редагування корабля в колекції
+console.log('f) Редагування корабля в колекції: ')
 ship1.EditingShip(33, 'Ship!', 1)
 console.log(ShipClass.ShipCollection)
 
 // Видалення корабля з колекції
-//ship2.DeleteShip()
+console.log('g) Видалення корабля з колекції')
+ship2.DeleteShip()
+
 
 // Пошук одного корабля в колекції
+console.log('h) Пошук одного корабля в колекції')
 console.log(ShipClass.Ship.SearchShip(1))
 
-// // Додавання пристані до порту
-// console.log(PierClass.Pier.AddPierToPort(4))
-console.log(PortClass.Port.SearchPort(1))
-pier1.AddPierToPort(1)
-console.log(PortClass.Port.SearchPort(1))
+// Додавання пристані до порту
+console.log('i) Додавання пристані до порту: ')
+pier1.AddPierToPort(4)
+console.log(PortClass.Port.SearchPort(4))
+
+// Видалення пристані із порту
+console.log('j) Видалення пристані із порту: ')
 PierClass.Pier.DeletePierFromPort(1)
-console.log(PortClass.Port.SearchPort(1))
+
+// Прибуття/Відбуття корабля від пристані
+console.log('k) Прибуття/Відбуття корабля від пристані: ')
 pier1.ArrivalAndDepartureShip(1)
+
+// Пошук усіх кораблів на пристані
+console.log('l) Пошук усіх кораблів на пристані: ')
 pier1.SearchAllShipsPies()

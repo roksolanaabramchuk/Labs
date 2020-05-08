@@ -1,6 +1,6 @@
 let PortClass = require('./Port.js')
 let ShipClass = require('./Ship.js')
-var b = []
+var searh = []
 class Pier {
     constructor(pierNumber, shipNumber, arrivalTime, departureTime) {
         this.pierNumber = pierNumber
@@ -11,42 +11,33 @@ class Pier {
 
     //Додавання пристані до порту
     AddPierToPort(portNumber) {
-        let count = 0
-        for (let i in PortClass.PortCollection) {
-            if (PortClass.PortCollection[i].portNumber === portNumber) {
-                if (PortClass.PortCollection[i].pierNumber === undefined) {
-                    PortClass.PortCollection[i].pierNumber = this.pierNumber
-                } else {
-                    return ('Даний порт уже має пристань')
-                }
-                count++
-            }
+        searh = PortClass.Port.SearchPort(portNumber)
+        if (searh.pierNumber === undefined) {
+            searh.pierNumber = this.pierNumber
+        } else {
+            return ('Даний порт уже має пристань')
         }
-        if (count === 0) {
-            return ('Такий порт відсутній')
-        }
-
     }
 
     //Видалення пристані із порту
     static DeletePierFromPort(portNumber) {
-        b = PortClass.Port.SearchPort(portNumber)
-        if (b.pierNumber === undefined) {
+        searh = PortClass.Port.SearchPort(portNumber)
+        if (searh.pierNumber === undefined) {
             console.log("Порт не має пристані")
         } else {
-            b.pierNumber = undefined
+            searh.pierNumber = undefined
         }
 
     }
 
     // Прибуття/Відбуття корабля від пристані
     ArrivalAndDepartureShip(shipNumber) {
-        b = ShipClass.Ship.SearchShip(shipNumber)
-        if (this.departureTime !== undefined && this.shipNumber === b.shipNumber) {
+        searh = ShipClass.Ship.SearchShip(shipNumber)
+        if (this.departureTime !== undefined && this.shipNumber === searh.shipNumber) {
             console.log("Корабель номер", shipNumber, "прибув до пристані номер", this.pierNumber, this.arrivalTime, "і відбув", this.departureTime)
-        } else if (this.arrivalTime !== undefined && this.shipNumber === b.shipNumber) {
+        } else if (this.arrivalTime !== undefined && this.shipNumber === searh.shipNumber) {
             console.log("Корабель номер", shipNumber, "прибув до пристані номер", this.pierNumber, this.arrivalTime, "але ще не відбув")
-        } else if (this.shipNumber !== b.shipNumber) {
+        } else if (this.shipNumber !== searh.shipNumber) {
             console.log("Корабель номер", shipNumber, "не прибував до пристані номер", this.pierNumber)
         }
     }

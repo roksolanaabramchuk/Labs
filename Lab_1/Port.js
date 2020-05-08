@@ -1,6 +1,4 @@
 var PortCollection = []
-var portSearch = []
-
 class Port {
     constructor(portNumber, portName, pierNumber) {
         this.portNumber = portNumber
