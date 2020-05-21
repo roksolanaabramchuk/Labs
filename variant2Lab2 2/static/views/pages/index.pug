@@ -1,0 +1,27 @@
+extends ../layout.pug
+
+block content
+
+
+
+
+  div.row
+    h1 Вітаємо у нашому порті, незнайомцю. <br> Гарно попрацювати.
+    br
+    h2 Оберіть з чим хочете попрацювати:
+    P Порти:
+    ul
+      li
+        a(href='/workPorts') Робота з портами
+    p Кораблі:
+    ul
+      li
+        a(href='/workShips') Робота з кораблями
+    p Порти та кораблі:
+    ul
+      li
+        a(href='/workPortsAndShips') Робота з кораблями та пристаннями
+    p Звіти:
+    ul
+      li
+        a(href='/report') Робота з звітами

@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block content
+    h2 Колекція кораблів
+    br
+    br
+    each val, index in dataShip
+        div.ship
+            p= index + '. Імя:' + val.name + '. Номер:' + val.number + '. Країна:' + val.country + '. Тонажність:' + val.tonnage
+            if val.log
+                each numb, index in val.log
+                    div.log= 'Історія подорожей N '+ index
+                    p= ' Пірс:' + numb.pier +'. Час прибутя:' + numb.timeArrival + '. Час відбуття:' +  numb.timeDeparture
+
+            else
+                p Корабель не подорожував

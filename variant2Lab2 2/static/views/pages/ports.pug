@@ -1,0 +1,8 @@
+extends ../layout.pug
+
+block content
+    h2 Колекція портів
+    br
+    br
+    each val, index in data
+        div.port= index + '. Імя:' + val.name + '. Країна:' + val.country + '. EDP:' + val.EDP + '. Пірс:' + val.pier
