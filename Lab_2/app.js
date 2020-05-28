@@ -57,9 +57,9 @@ class ShipOnPier {
 
 let ShipOnPiers = [new ShipOnPier([69, 22], 22), new ShipOnPier([999], 2)]
 
-let ports = [new Port('Maria', 'Germany', 2234, 'Molodizna 2', [22]),
-    new Port('San Via', 'USA', 1124, 'San Francisco 2', []),
-    new Port('Diego', 'Italy', 5647, 'bi polar 2', [])
+let ports = [new Port('GSH', 'Germany', 2234, 'CHEV 3', [22]),
+    new Port('Sky', 'Ukraine', 1124, 'KJJB', []),
+    new Port('Moon', 'Italy', 5647, 'LKJn', [])
 ]
 
 let ships = [
@@ -68,18 +68,18 @@ let ships = [
         new Log(22, new Date(2020, 4, 30), new Date(2020, 8, 17))
     ]),
 
-    new Ship('Biar', 22, 'Urugvai', 12, [
+    new Ship('Biar', 22, 'Ukraine', 12, [
         new Log(14, new Date(2019, 12, 30), new Date(2020, 3, 17)),
         new Log(2, new Date(2020, 4, 30), new Date(2020, 8, 17))
     ]),
-    new Ship('Hope', 999, "China", 2, [
+    new Ship('Sea', 999, "China", 2, [
         new Log(22, new Date(2017, 12, 30), new Date(2028, 3, 17)),
         new Log(2, new Date(2018, 4, 30), new Date(2019, 8, 17))
     ])
 ]
 
-let piers = [new Pier('Morgen', 22, 3), new Pier('Peep', 14, 5),
-    new Pier('Juis', 2, 1)
+let piers = [new Pier('Lek', 22, 3), new Pier('jb', 14, 5),
+    new Pier('mj', 2, 1)
 ]
 let AllMatherPiers = JSON.stringify(piers)
 AllMatherPiers = JSON.parse(AllMatherPiers)
@@ -528,6 +528,6 @@ app.post('/report', (req, res) => {
 
 })
 
-app.listen(3002, () => {
-    console.log(3000)
+app.listen(3004, () => {
+    console.log(3004)
 });
